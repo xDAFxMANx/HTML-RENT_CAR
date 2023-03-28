@@ -8,7 +8,7 @@
 
   <br />
   <br />
-  
+  ok
   <img src="./readme-images/project-logo.png" />
 
   <h2 align="center">Ridex - Car rent website</h2>
