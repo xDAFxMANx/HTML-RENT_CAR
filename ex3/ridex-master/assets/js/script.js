@@ -1,9 +1,5 @@
 'use strict';
 
-/**
- * navbar toggle
- */
-
 const overlay = document.querySelector("[data-overlay]");
 const navbar = document.querySelector("[data-navbar]");
 const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
@@ -22,15 +18,24 @@ for (let i = 0; i < navbarLinks.length; i++) {
   navbarLinks[i].addEventListener("click", navToggleFunc);
 }
 
-
-
-/**
- * header active on scroll
- */
-
 const header = document.querySelector("[data-header]");
 
 window.addEventListener("scroll", function () {
   window.scrollY >= 10 ? header.classList.add("active")
     : header.classList.remove("active");
 });
+
+function showInfo(id){
+  var idElem = document.getElementById(id)
+  if (idElem.style.display == "none")
+    idElem.style.display = "grid"
+  else
+    idElem.style.display = "none"
+
+  var infos = document.getElementsByClassName("featured-car-card-info")
+  for (let i = 0; i < infos.length; i++) {
+    var elem = infos[i]
+    if (elem.id != id)
+      elem.style.display = "none"
+  }
+}

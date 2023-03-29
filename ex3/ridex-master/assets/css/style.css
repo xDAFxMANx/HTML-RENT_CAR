@@ -524,11 +524,8 @@ body {
   position: absolute;
   left: var(--side-margin);
   width: var(--container-max-width);
-  z-index: 30;
-}
-
-.hide {
   display:none;
+  z-index: 50;
 }
 
 
