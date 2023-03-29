@@ -1,24 +1,4 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2022 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
-
-  /**
-   * colors
-   */
 
   --pale-purple-pantone: hsl(262, 63%, 92%);
   --medium-sea-green: hsl(152, 63%, 43%);
@@ -45,10 +25,6 @@
 
   --gradient: linear-gradient(to top, var(--alice-blue-2), var(--alice-blue-3));
 
-  /**
-   * typography
-   */
-
   --ff-nunito: 'Nunito', sans-serif;
   --ff-open-sans: 'Open Sans', sans-serif;
 
@@ -63,42 +39,22 @@
   --fw-400: 400;
   --fw-600: 600;
 
-  /**
-   * transition
-   */
-
   --transition: 0.5s ease;
 
-  /**
-   * spacing
-   */
-
-  --section-padding: 50px;
-
-  /**
-   * radius
-   */
+  --section-padding:  20px;
 
   --radius-10: 10px;
   --radius-14: 14px;
   --radius-18: 18px;
-
-  /**
-   * shadow
-   */
 
   --shadow-1: 3px 3px 9px hsla(240, 14%, 69%, 0.2);
   --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
 
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
+/**
+  *icons
+*/
 
 *, *::before, *::after {
   margin: 0;
@@ -160,16 +116,6 @@ body {
 
 
 
-
-
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
-
-.container { padding-inline: 15px; }
-
-button, a { transition: var(--transition); }
-
 .btn {
   position: relative;
   background: var(--background, var(--carolina-blue));
@@ -230,14 +176,14 @@ button, a { transition: var(--transition); }
 .w-100 { width: 100%; }
 
 
-
-
-
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
 
-.header-contact { display: none; }
+.header-contact {
+  display: block;
+  text-align: center;
+}
 
 .header {
   background: var(--alice-blue-1);
@@ -246,7 +192,7 @@ button, a { transition: var(--transition); }
   left: 0;
   width: 100%;
   transition: var(--transition);
-  z-index: 4;
+  z-index: 40;
 }
 
 .header.active { box-shadow: var(--shadow-1); }
@@ -258,13 +204,26 @@ button, a { transition: var(--transition); }
   align-items: center;
 }
 
+.container { 
+  max-width: 75%;
+  margin-inline: auto;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
 }
 
-.header-actions .btn span { display: none; }
+.header-actions { gap: 30px; }
+
+.header-actions .btn span {
+  display: block;
+  font-weight: var(--fw-400);
+  padding-inline: 15px;
+}
+
+.header-actions .btn:first-of-type ion-icon { display: none; }
+
 
 .user-btn {
   --color: var(--independence);
@@ -294,27 +253,6 @@ button, a { transition: var(--transition); }
   background: var(--carolina-blue);
 }
 
-.navbar {
-  background: var(--alice-blue-1);
-  position: fixed;
-  top: 70px;
-  bottom: 0;
-  right: -260px;
-  max-width: 260px;
-  width: 100%;
-  padding: 20px 25px;
-  border: 1px solid var(--white);
-  box-shadow: var(--shadow-1);
-  visibility: hidden;
-  transition: 0.25s cubic-bezier(0.51, 0.03, 0.64, 0.28);
-}
-
-.navbar.active {
-  visibility: visible;
-  transform: translateX(-100%);
-  transition: 0.5s cubic-bezier(0.33, 0.85, 0.56, 1.02);
-}
-
 .navbar-link {
   color: var(--independence);
   font-family: var(--ff-nunito);
@@ -325,45 +263,47 @@ button, a { transition: var(--transition); }
 
 .navbar-link:is(:hover, :focus) { color: var(--carolina-blue); }
 
-.overlay {
-  position: fixed;
-  top: 70px;
-  background: hsl(216, 38%, 95%);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition);
+.overlay,
+.nav-toggle-btn { display: none; }
+
+.navbar,
+.navbar.active { all: unset; }
+
+.navbar-link {
+  margin-bottom: 0;
+  font-weight: var(--fw-600);
 }
 
-.overlay.active {
-  opacity: 0.7;
-  pointer-events: all;
+.navbar-list {
+  display: flex;
+  gap: 50px;
 }
-
-
-
 
 
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
 
-.hero { padding-top: 120px; }
+.hero { 
+  padding-top: 120px;
+  position: relative;
+  min-height: 100vh;
+  display:flexbox;
+  z-index: 1;
+}
 
 .hero-title {
   max-width: 20ch;
   margin-bottom: 15px;
+  margin-top: 30px;
 }
 
 .hero-text {
+  max-width: 400ch;
   color: var(--independence);
   line-height: 1.8;
   margin-bottom: 30px;
 }
-
-.hero-banner { display: none; }
 
 .hero-form {
   background: var(--gradient);
@@ -371,9 +311,38 @@ button, a { transition: var(--transition); }
   box-shadow: var(--shadow-1);
   border-radius: var(--radius-18);
   font-family: var(--ff-nunito);
+  width: 47.5%;
 }
 
-.input-wrapper { padding: 15px 20px; }
+
+
+.hero-form .btn {
+  --width: calc(100% - 40px);
+  --height: 50px;
+  margin: 20px;
+  text-transform: uppercase;
+}
+.hero-form .btn {
+  --width: calc(100% - 40px);
+  --height: 50px;
+  text-transform: uppercase;
+}
+
+.hero-banner {
+  display: block;
+  background: url("../images/hero-banner.jpg") no-repeat;
+  background-size: cover;
+  background-position: left;
+  position: absolute;
+  top: 100px;
+  bottom: 50px;
+  left: 52.5%;
+  width: 37.5%;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+.input-wrapper { padding: 20px 25px; }
 
 .input-wrapper:not(:last-of-type) { border-bottom: 1px solid hsla(0, 0%, 0%, 0.08); }
 
@@ -395,12 +364,6 @@ button, a { transition: var(--transition); }
 
 .input-field::placeholder { color: var(--independence); }
 
-.hero-form .btn {
-  --width: calc(100% - 40px);
-  --height: 50px;
-  margin: 20px;
-  text-transform: uppercase;
-}
 
 
 
@@ -440,8 +403,8 @@ button, a { transition: var(--transition); }
 
 .featured-car-list {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   gap: 30px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .featured-car-card {
@@ -560,6 +523,13 @@ button, a { transition: var(--transition); }
   --color: var(--red-salsa);
 }
 
+.featured-car-card-info {
+
+}
+
+.hide {
+  display:none;
+}
 
 
 
@@ -573,6 +543,7 @@ button, a { transition: var(--transition); }
 .get-start-list {
   display: grid;
   gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .get-start-card {
@@ -655,102 +626,6 @@ button, a { transition: var(--transition); }
 
 
 
-
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
-
-.blog .section-title { margin-bottom: 30px; }
-
-.blog-card {
-  background: var(--alice-blue-2);
-  border-radius: var(--radius-18);
-  border: 1px solid var(--white);
-  box-shadow: var(--shadow-1);
-  overflow: hidden;
-}
-
-.blog-card .card-banner {
-  aspect-ratio: 3 / 2;
-  position: relative;
-  overflow: hidden;
-}
-
-.blog-card .card-banner a:first-child { height: 100%; }
-
-.blog-card .card-banner img {
-  height: 100%;
-  object-fit: cover;
-}
-
-.blog-card .card-badge {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  --height: 30px;
-  --width: 92px;
-}
-
-.blog-card .card-content { padding: 20px; }
-
-.blog-card .card-title { margin-bottom: 20px; }
-
-.blog-card .card-title > a { color: inherit; }
-
-.blog-card .card-title > a:is(:hover, :focus) { color: var(--carolina-blue); }
-
-.blog-card .card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.blog-card :is(.publish-date, .comments) {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: var(--fs-6);
-  color: var(--independence);
-}
-
-.blog-card :is(.publish-date, .comments) ion-icon {
-  font-size: 15px;
-  --ionicon-stroke-width: 50px;
-}
-
-.blog .has-scrollbar {
-  display: flex;
-  gap: 20px;
-  scroll-snap-type: inline mandatory;
-  overflow-x: auto;
-  padding-bottom: 20px;
-}
-
-.blog .has-scrollbar > li {
-  flex-shrink: 0;
-  max-width: 330px;
-  width: 100%;
-  scroll-snap-align: start;
-}
-
-.has-scrollbar::-webkit-scrollbar-track {
-  background: var(--alice-blue-1);
-  outline: 2px solid var(--carolina-blue);
-  border-radius: 10px;
-}
-
-.has-scrollbar::-webkit-scrollbar-thumb {
-  border-color: var(--alice-blue-1);
-  background: var(--carolina-blue);
-  border-radius: 10px;
-}
-
-.has-scrollbar::-webkit-scrollbar-button { width: calc(25% - 40px); }
-
-
-
-
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -778,13 +653,15 @@ button, a { transition: var(--transition); }
   line-height: 1.8;
 }
 
+.footer-text { max-width: 35ch; }
+
 .footer-list { font-family: var(--ff-nunito); }
 
-.footer-list:not(:last-of-type) { width: 50%; }
+.footer-list:not(:last-of-type) { width: 16.66%; }
 
 .footer-list:last-of-type {
-  width: 100%;
   column-count: 2;
+  width: 33.33%;
 }
 
 .footer-list-title {
@@ -809,6 +686,15 @@ button, a { transition: var(--transition); }
   padding: 20px;
 }
 
+.footer-bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 30px;
+  box-shadow: var(--shadow-1);
+}
+
 .social-list {
   display: flex;
   align-items: center;
@@ -827,377 +713,3 @@ button, a { transition: var(--transition); }
 .copyright > a { display: inline-block; }
 
 .copyright > a:is(:hover, :focus) { color: var(--carolina-blue); }
-
-
-
-
-
-/*-----------------------------------*\
-  #MEDIA QUERIES
-\*-----------------------------------*/
-
-/**
- * responsive for large than 350px screen
- */
-
-@media (min-width: 350px) {
-
-  /**
-   * FEATURED CAR
-   */
-
-  .featured-car-card .card-list { grid-template-columns: 1fr 1fr; }
-
-  .featured-car-card .card-price { margin-right: auto; }
-
-  .featured-car-card .btn:last-child {
-    min-width: max-content;
-    padding-inline: 15px;
-  }
-
-}
-
-
-
-
-
-/**
- * responsive for large than 580px screen
- */
-
-@media (min-width: 580px) {
-
-  /**
-   * REUSED STYLE
-   */
-
-  .container {
-    max-width: 540px;
-    margin-inline: auto;
-  }
-
-
-
-  /**
-   * HEADER
-   */
-
-  .header-actions .btn span {
-    display: block;
-    font-weight: var(--fw-400);
-    padding-inline: 15px;
-  }
-
-  .header-actions .btn:first-of-type ion-icon { display: none; }
-
-}
-
-
-
-
-
-/**
- * responsive for large than 768px screen
- */
-
-@media (min-width: 768px) {
-
-  /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
-
-    /**
-     * typography
-     */
-
-    --fs-1: 2.625rem;
-
-  }
-
-
-
-  /**
-   * REUSED STYLE
-   */
-
-  .container { max-width: 720px; }
-
-
-
-  /**
-   * HEADER
-   */
-
-  .header-actions { gap: 30px; }
-
-  .header-contact {
-    display: block;
-    text-align: center;
-  }
-
-  .header-contact .contact-link {
-    color: var(--space-cadet);
-    font-family: var(--ff-nunito);
-    font-size: var(--fs-5);
-    line-height: 1.3;
-  }
-
-  .header-contact .contact-link:is(:hover, :focus) { color: var(--carolina-blue); }
-
-  .header-contact .contact-time {
-    color: var(--independence);
-    font-size: var(--fs-7);
-  }
-
-
-
-  /**
-   * HERO
-   */
-
-  .hero {
-    position: relative;
-    min-height: 85vh;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-  }
-
-  .hero-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 0.8fr;
-  }
-
-  .input-wrapper:not(:last-of-type) {
-    border-bottom: none;
-    border-right: 1px solid hsla(0, 0%, 0%, 0.08);
-  }
-
-  .input-label {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .hero-banner {
-    display: block;
-    background: url("../images/hero-banner.jpg") no-repeat;
-    background-size: cover;
-    background-position: left;
-    position: absolute;
-    top: 100px;
-    bottom: 50px;
-    left: 65%;
-    width: 500px;
-    border-radius: 30px;
-    z-index: -1;
-  }
-
-
-
-  /**
-   * FEATURED CAR
-   */
-
-  .featured-car-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-
-
-  /**
-   * GET START
-   */
-
-  .get-start-list { grid-template-columns: 1fr 1fr; }
-
-
-
-  /**
-   * FOOTER
-   */
-
-  .footer-brand { width: 100%; }
-
-  .footer-text { max-width: 400px; }
-
-  .footer-bottom {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 30px;
-    box-shadow: var(--shadow-1);
-  }
-
-  .social-list { margin-bottom: 0; }
-
-}
-
-
-
-
-
-/**
- * responsive for large than 992px screen
- */
-
-@media (min-width: 992px) {
-
-  /**
-   * REUSED STYLE
-   */
-
-  .container { max-width: 960px; }
-
-
-
-  /**
-   * HERO
-   */
-
-  .hero .container { width: 100%; }
-
-
-
-  /**
-   * BLOG
-   */
-
-  .blog .has-scrollbar { padding-bottom: 50px; }
-
-  .blog .has-scrollbar > li { max-width: 450px; }
-
-
-
-  /**
-   * FOOTER
-   */
-
-  .footer-list:not(:last-of-type) { width: 25%; }
-
-  .footer-list:last-of-type { width: 50%; }
-
-}
-
-
-
-
-
-/**
- * responsive for large than 1200px screen
- */
-
-@media (min-width: 1200px) {
-
-  /**
-   * CUSTOM PROPERTY
-   */
-
-  :root {
-
-    /**
-     * typography
-     */
-
-    --fs-1: 2.875rem;
-    --fs-2: 2rem;
-
-  }
-
-
-
-  /**
-   * REUSED STYLE
-   */
-
-  .container { max-width: 1170px; }
-
-
-
-
-  /**
-   * HEADER
-   */
-
-  .overlay,
-  .nav-toggle-btn { display: none; }
-
-  .navbar,
-  .navbar.active { all: unset; }
-
-  .navbar-link {
-    margin-bottom: 0;
-    font-weight: var(--fw-600);
-  }
-
-  .navbar-list {
-    display: flex;
-    gap: 50px;
-  }
-
-
-
-  /**
-   * HERO
-   */
-
-  .hero { min-height: 100vh; }
-
-  .hero-banner {
-    left: auto;
-    right: 50px;
-    width: 630px;
-  }
-
-  .hero-form { max-width: 900px; }
-
-  .hero-form .btn {
-    --width: calc(100% - 40px);
-    --height: 50px;
-    margin: 20px;
-    text-transform: uppercase;
-  }
-
-
-
-  /**
-   * FEATURED CAR 
-   */
-
-  .featured-car-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-
-
-  /**
-   * GET START
-   */
-
-  .get-start-list { grid-template-columns: repeat(4, 1fr); }
-
-
-
-  /**
-   * BLOG
-   */
-
-  .blog .has-scrollbar > li {
-    max-width: 340px;
-    scroll-snap-align: center;
-  }
-
-
-
-  /**
-   * FOOTER
-   */
-
-  .footer-brand { width: 33.33%; }
-
-  .footer-text { max-width: 35ch; }
-
-  .footer-list:not(:last-of-type) { width: 16.66%; }
-
-  .footer-list:last-of-type { width: 33.33%; }
-
-}
