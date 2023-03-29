@@ -49,6 +49,10 @@
 
   --shadow-1: 3px 3px 9px hsla(240, 14%, 69%, 0.2);
   --shadow-2: 3px 3px 9px hsla(204, 92%, 59%, 0.3);
+  
+  --container-max-width: 75%;
+  --side-margin: 12.5%;
+
 
 }
 
@@ -205,7 +209,7 @@ body {
 }
 
 .container { 
-  max-width: 75%;
+  max-width: var(--container-max-width);
   margin-inline: auto;
 }
 
@@ -524,7 +528,10 @@ body {
 }
 
 .featured-car-card-info {
-
+  position: absolute;
+  left: var(--side-margin);
+  width: var(--container-max-width);
+  z-index: 30;
 }
 
 .hide {
