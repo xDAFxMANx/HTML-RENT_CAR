@@ -293,16 +293,9 @@ body {
 }
 
 .hero-title {
-  max-width: 20ch;
+  max-width: 25ch;
   margin-bottom: 15px;
   margin-top: 30px;
-}
-
-.hero-text {
-  max-width: 400ch;
-  color: var(--independence);
-  line-height: 1.8;
-  margin-bottom: 30px;
 }
 
 .hero-form {
