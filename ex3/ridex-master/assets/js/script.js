@@ -39,3 +39,19 @@ function showInfo(id){
       elem.style.display = "none"
   }
 }
+
+function myFunction(dotsid,moreid,myBtn) {
+  var dots = document.getElementById(dotsid);
+  var moreText = document.getElementById(moreid);
+  var btnText = document.getElementById(myBtn);
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Vezi mai mult";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Vezi mai putin";
+    moreText.style.display = "inline";
+  }
+}
