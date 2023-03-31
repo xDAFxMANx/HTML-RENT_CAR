@@ -537,8 +537,7 @@ body {
   box-shadow: var(--shadow-1);
 }
 
-.get-start-card .card-icon {
-  background-image: url('../images/mark.jpg') no-repeat auto;
+.get-start-card .card-icon img {
   height: 50px;
   width: 50px;
   display: grid;
