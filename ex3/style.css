@@ -56,10 +56,6 @@
 
 }
 
-/**
-  *icons
-*/
-
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -117,7 +113,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover { background: hsla(219, 14%, 60%, 0.5); }
-
 
 
 .btn {
@@ -178,11 +173,6 @@ body {
 .h3 { font-size: var(--fs-4); }
 
 .w-100 { width: 100%; }
-
-
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
 
 .header-contact {
   display: block;
@@ -284,10 +274,6 @@ body {
 }
 
 
-/*-----------------------------------*\
-  #HERO
-\*-----------------------------------*/
-
 .hero { 
   padding-top: 180px;
   position: relative;
@@ -361,15 +347,6 @@ body {
 
 .input-field::placeholder { color: var(--independence); }
 
-
-
-
-
-
-/*-----------------------------------*\
-  #FEATURED CAR
-\*-----------------------------------*/
-
 .featured-car .title-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -389,7 +366,7 @@ body {
   background: var(--gradient);
   border: 1px solid var(--white);
   border-radius: var(--radius-18);
-  padding: px;
+  padding: 30px;
   box-shadow: var(--shadow-1);
 }
 
@@ -509,13 +486,6 @@ body {
   z-index: 50;
 }
 
-
-
-
-/*-----------------------------------*\
-  #GET START
-\*-----------------------------------*/
-
 .get-start .section-title { margin-bottom: 25px; }
 
 .get-start-list {
@@ -554,11 +524,6 @@ body {
 }
 
 .get-start-card .card-text { color: var(--independence); }
-
-
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
 
 .footer {
   background: var(--alice-blue-4);
@@ -649,7 +614,3 @@ body {
 #more,#more2,#more3,#more4 {display: none;}
 #myBtn:is(:hover, :focus) { color: var(--carolina-blue); }
 #dots,#dots2,#dots3,#dots4 {display: inline;}
-
-
-
-

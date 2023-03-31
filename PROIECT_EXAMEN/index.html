@@ -7,19 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RENTCAR</title>
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
-
-  <!-- 
-    - custom css link
-  -->
+ 
   <link rel="stylesheet" href="./style.css">
 
-  <!-- 
-    - google font link
-  -->
+ 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
@@ -28,32 +19,28 @@
 
 <body>
 
-  <!-- 
-    - #HEADER
-  -->
-
   <header class="header" data-header>
     <div class="container">
 
       <div class="overlay" data-overlay></div>
 
       <a href="#" class="logo">
-        <img src="./assets/images/logo.svg" alt="Ridex logo">
+        <img src="./assets/images/logo.svg" alt="RENTCAR logo">
       </a>
 
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
 
           <li>
-            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+            <a href="#home" class="navbar-link" data-nav-link>ACASA</a>
           </li>
 
           <li>
-            <a href="#featured-car" class="navbar-link" data-nav-link>Explore cars</a>
+            <a href="#featured-car" class="navbar-link" data-nav-link>MASINI</a>
           </li>
 
           <li>
-            <a href="#about" class="navbar-link" data-nav-link>Help</a>
+            <a href="#about" class="navbar-link" data-nav-link>DESPRE NOI</a>
 
         </ul>
       </nav>
@@ -61,15 +48,15 @@
       <div class="header-actions">
 
         <div class="header-contact">
-          <a href="tel:88002345678" class="contact-link">8 800 234 56 78</a>
+          <a href="tel:+373 79175263" class="contact-link">+373 79175263</a>
 
-          <span class="contact-time">Mon - Sat: 9:00 am - 6:00 pm</span>
+          <span class="contact-time">Luni - Vineri: 06:00 - 23:00</span>
         </div>
 
         <a href="#featured-car" class="btn" aria-labelledby="aria-label-txt">
           <ion-icon name="car-outline"></ion-icon>
 
-          <span id="aria-label-txt">Explore cars</span>
+          <span id="aria-label-txt">MASINI</span>
         </a>
 
         <a href="#" class="btn user-btn" aria-label="Profile">
@@ -96,11 +83,7 @@
         <div class="container">
 
           <div class="hero-content">
-            <h2 class="h1 hero-title">The easy way to takeover a lease</h2>
-
-            <p class="hero-text">
-              Live in New York, New Jerset and Connecticut!
-            </p>
+            <h2 class="h1 hero-title">Cu cât conduc mai precis, cu atât îmi place mai mult.</h2>
           </div>
 
           <div class="hero-banner"></div>
@@ -108,25 +91,25 @@
           <form action="" class="hero-form">
 
             <div class="input-wrapper">
-              <label for="input-1" class="input-label">Car, model, or brand</label>
+              <label for="input-1" class="input-label">Brandul</label>
 
               <input type="text" name="car-model" id="input-1" class="input-field"
-                placeholder="What car are you looking?">
+                placeholder="Ce marca de masina?">
             </div>
 
             <div class="input-wrapper">
-              <label for="input-2" class="input-label">Max. monthly payment</label>
+              <label for="input-2" class="input-label">Modelul</label>
 
-              <input type="text" name="monthly-pay" id="input-2" class="input-field" placeholder="Add an amount in $">
+              <input type="text" name="monthly-pay" id="input-2" class="input-field" placeholder="Ce model de masina?">
             </div>
 
             <div class="input-wrapper">
-              <label for="input-3" class="input-label">Make Year</label>
+              <label for="input-3" class="input-label">Pretul</label>
 
-              <input type="text" name="year" id="input-3" class="input-field" placeholder="Add a minimal make year">
+              <input type="text" name="year" id="input-3" class="input-field" placeholder="Care este pretul maxim?">
             </div>
 
-            <button type="submit" class="btn">Search</button>
+            <button type="submit" class="btn">Cautare</button>
 
           </form>
 
@@ -137,22 +120,16 @@
         <div class="container">
 
           <div class="title-wrapper">
-            <h2 class="h2 section-title">Featured cars</h2>
-
-            <a href="#" class="featured-car-link">
-              <span>View more</span>
-
-              <ion-icon name="arrow-forward-outline"></ion-icon>
-            </a>
+            <h2 class="h2 section-title">Masini</h2>
           </div>
 
           <ul class="featured-car-list">
 
-            <li>
+            <li onclick="showInfo('Bugatti Chiron')">
               <div class="featured-car-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/car-1.jpg" alt="Toyota RAV4 2021" loading="lazy" width="440" height="300"
+                  <img src="./assets/images/bugatii.jpg" alt="Bugatti Chiron 2021" loading="lazy" width="440" height="300"
                     class="w-100">
                 </figure>
 
@@ -160,7 +137,7 @@
 
                   <div class="card-title-wrapper">
                     <h3 class="h3 card-title">
-                      <a href="#">Toyota eqRAV4</a>
+                      <a>Bugatti Chiron</a>
                     </h3>
 
                     <data class="year" value="2021">2021</data>
@@ -168,14 +145,14 @@
                 </div>
 
               </div>
-              <div class="featured-car-card featured-car-card-info">
+              <div id="Bugatti Chiron" class="featured-car-card featured-car-card-info">
 
                 <ul class="card-list">
 
                   <li class="card-list-item">
                     <ion-icon name="people-outline"></ion-icon>
 
-                    <span class="card-item-text">4 People</span>
+                    <span class="card-item-text">5 People</span>
                   </li>
 
                   <li class="card-list-item">
@@ -187,7 +164,7 @@
                   <li class="card-list-item">
                     <ion-icon name="speedometer-outline"></ion-icon>
 
-                    <span class="card-item-text">6.1km / 1-litre</span>
+                    <span class="card-item-text">100km / 16-litre</span>
                   </li>
 
                   <li class="card-list-item">
@@ -201,7 +178,7 @@
                 <div class="card-price-wrapper">
 
                   <p class="card-price">
-                    <strong>$440</strong> / month
+                    <strong>450$</strong> / day
                   </p>
 
                   <button class="btn fav-btn" aria-label="Add to favourite list">
@@ -215,11 +192,11 @@
               </div>
             </li>
 
-            <li class="hide">
+            <li onclick="showInfo('Rolls Royce Phantom')">
               <div class="featured-car-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/car-1.jpg" alt="Toyota RAV4 2021" loading="lazy" width="440" height="300"
+                  <img src="./assets/images/rolls.avif" alt="Rolls Royce Phantom" loading="lazy" width="440" height="300"
                     class="w-100">
                 </figure>
 
@@ -227,15 +204,15 @@
 
                   <div class="card-title-wrapper">
                     <h3 class="h3 card-title">
-                      <a href="#">Toyota RAV4</a>
+                      <a>Rolls Royce Phantom</a>
                     </h3>
 
-                    <data class="year" value="2021">2021</data>
+                    <data class="year" value="2023">2023</data>
                   </div>
                 </div>
 
               </div>
-              <div class="featured-car-card featured-car-card-info">
+              <div id="Rolls Royce Phantom" class="featured-car-card featured-car-card-info">
 
                 <ul class="card-list">
 
@@ -254,7 +231,7 @@
                   <li class="card-list-item">
                     <ion-icon name="speedometer-outline"></ion-icon>
 
-                    <span class="card-item-text">6.1km / 1-litre</span>
+                    <span class="card-item-text">100km / 8-litre</span>
                   </li>
 
                   <li class="card-list-item">
@@ -268,7 +245,7 @@
                 <div class="card-price-wrapper">
 
                   <p class="card-price">
-                    <strong>$440</strong> / month
+                    <strong>$400</strong> / day
                   </p>
 
                   <button class="btn fav-btn" aria-label="Add to favourite list">
@@ -282,11 +259,11 @@
               </div>
             </li>
 
-            <li>
+            <li onclick="showInfo('Ferrari Berlinetta 2022')">
               <div class="featured-car-card">
 
                 <figure class="card-banner">
-                  <img src="./assets/images/car-1.jpg" alt="Toyota RAV4 2021" loading="lazy" width="440" height="300"
+                  <img src="./assets/images/ferrari.jpg" alt="Ferrari Berlinetta 2022" loading="lazy" width="440" height="300"
                     class="w-100">
                 </figure>
 
@@ -294,22 +271,22 @@
 
                   <div class="card-title-wrapper">
                     <h3 class="h3 card-title">
-                      <a href="#">Toyotaeqw RAV4</a>
+                      <a>Ferrari Berlinetta</a>
                     </h3>
 
-                    <data class="year" value="2021">2021</data>
+                    <data class="year" value="2022">2022</data>
                   </div>
                 </div>
 
               </div>
-              <div class="featured-car-card featured-car-card-info">
+              <div id="Ferrari Berlinetta 2022" class="featured-car-card featured-car-card-info">
 
                 <ul class="card-list">
 
                   <li class="card-list-item">
                     <ion-icon name="people-outline"></ion-icon>
 
-                    <span class="card-item-text">4 People</span>
+                    <span class="card-item-text">2 People</span>
                   </li>
 
                   <li class="card-list-item">
@@ -321,7 +298,7 @@
                   <li class="card-list-item">
                     <ion-icon name="speedometer-outline"></ion-icon>
 
-                    <span class="card-item-text">6.1km / 1-litre</span>
+                    <span class="card-item-text">100km / 12-litre</span>
                   </li>
 
                   <li class="card-list-item">
@@ -335,7 +312,208 @@
                 <div class="card-price-wrapper">
 
                   <p class="card-price">
-                    <strong>$440</strong> / month
+                    <strong>270$</strong> / day
+                  </p>
+
+                  <button class="btn fav-btn" aria-label="Add to favourite list">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn">Rent now</button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li onclick="showInfo('Lamborghini Huracan 2018')">
+              <div class="featured-car-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/lambo.jpg" alt="Lamborghini Huracan 2018" loading="lazy" width="440" height="300"
+                    class="w-100">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-title-wrapper">
+                    <h3 class="h3 card-title">
+                      <a>Lamborghini Huracan </a>
+                    </h3>
+
+                    <data class="year" value="2018">2018</data>
+                  </div>
+                </div>
+
+              </div>
+              <div id="Lamborghini Huracan 2018" class="featured-car-card featured-car-card-info">
+
+                <ul class="card-list">
+
+                  <li class="card-list-item">
+                    <ion-icon name="people-outline"></ion-icon>
+
+                    <span class="card-item-text">2 People</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+
+                    <span class="card-item-text">Hybrid</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                    <span class="card-item-text">100km / 14-litre</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                    <span class="card-item-text">Automatic</span>
+                  </li>
+
+                </ul>
+
+                <div class="card-price-wrapper">
+
+                  <p class="card-price">
+                    <strong>300$</strong> / day
+                  </p>
+
+                  <button class="btn fav-btn" aria-label="Add to favourite list">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn">Rent now</button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li onclick="showInfo('McLaren')">
+              <div class="featured-car-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/mclaren.jpg" alt="McLaren 2020" loading="lazy" width="440" height="300"
+                    class="w-100">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-title-wrapper">
+                    <h3 class="h3 card-title">
+                      <a>McLaren</a>
+                    </h3>
+
+                    <data class="year" value="2020">2020</data>
+                  </div>
+                </div>
+
+              </div>
+              <div id="McLaren" class="featured-car-card featured-car-card-info">
+
+                <ul class="card-list">
+
+                  <li class="card-list-item">
+                    <ion-icon name="people-outline"></ion-icon>
+
+                    <span class="card-item-text">2 People</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+
+                    <span class="card-item-text">Hybrid</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                    <span class="card-item-text">100km / 9-litre</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                    <span class="card-item-text">Automatic</span>
+                  </li>
+
+                </ul>
+
+                <div class="card-price-wrapper">
+
+                  <p class="card-price">
+                    <strong>250$</strong> / day
+                  </p>
+
+                  <button class="btn fav-btn" aria-label="Add to favourite list">
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+
+                  <button class="btn">Rent now</button>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li onclick="showInfo('Aston Martin')">
+              <div class="featured-car-card">
+
+                <figure class="card-banner">
+                  <img src="./assets/images/aston.avif" alt="Aston Martin 2022" loading="lazy" width="440" height="300"
+                    class="w-100">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-title-wrapper">
+                    <h3 class="h3 card-title">
+                      <a>Aston Martin</a>
+                    </h3>
+
+                    <data class="year" value="2022">2022</data>
+                  </div>
+                </div>
+
+              </div>
+              <div id="Aston Martin" class="featured-car-card featured-car-card-info">
+
+                <ul class="card-list">
+
+                  <li class="card-list-item">
+                    <ion-icon name="people-outline"></ion-icon>
+
+                    <span class="card-item-text">2 People</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="flash-outline"></ion-icon>
+
+                    <span class="card-item-text">Hybrid</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                    <span class="card-item-text">100km / 10-litre</span>
+                  </li>
+
+                  <li class="card-list-item">
+                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                    <span class="card-item-text">Automatic</span>
+                  </li>
+
+                </ul>
+
+                <div class="card-price-wrapper">
+
+                  <p class="card-price">
+                    <strong>260$</strong> / day
                   </p>
 
                   <button class="btn fav-btn" aria-label="Add to favourite list">
@@ -357,24 +535,23 @@
       <section class="section get-start" id="about">
         <div class="container">
 
-          <h2 class="h2 section-title">Get started with 4 simple steps</h2>
+          <h2 class="h2 section-title">Recenzii</h2>
 
           <ul class="get-start-list">
 
             <li>
               <div class="get-start-card">
 
-                <div class="card-icon icon-1">
-                  <ion-icon name="person-add-outline"></ion-icon>
+                <div class="card-icon icon">
+                  <img src="./assets/images/daniel.jpg">
                 </div>
 
-                <h3 class="card-title">Create a profile</h3>
+                <h3 class="card-title">Rolls Royce Phantom</h3>
 
                 <p class="card-text">
-                  If you are going to use a passage of Lorem Ipsum, you need to be sure.
+                  Noul Rolls-Royce Phantom oferă proprietarilor înstăriți cel mai bun lux, confort și opulență. Calitatea superioară a călătoriei, o cabină liniștită și luxoasă și <span id="dots">...</span><span id="more">un motor V12 aproape silențios fac experiența de condus Phantom unică. Combinația Phantom de măiestrie, tehnologie și clasic- designul contemporan inspirat este cu adevărat unic.</span>
                 </p>
-
-                <a href="#" class="card-link">Get started</a>
+                <button onclick="myFunction('dots','more','myBtn')" id="myBtn">Vezi mai mult</button>
 
               </div>
             </li>
@@ -382,15 +559,16 @@
             <li>
               <div class="get-start-card">
 
-                <div class="card-icon icon-2">
-                  <ion-icon name="car-outline"></ion-icon>
+                <div class="card-icon icon">
+                  <img src="./assets/images/daniel.jpg">
                 </div>
 
-                <h3 class="card-title">Tell us what car you want</h3>
+                <h3 class="card-title">Bugatti Chiron</h3>
 
-                <p class="card-text">
-                  Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+                <p class="card-text">               
+                 Buggati Chiron este mașina mea preferată din lume. Este cea mai rapidă mașină din lume, iar materialul pe care Bugatti Chiron <span id="dots2">...</span><span id="more2"> îl folosește pentru calitatea construcției aeronavelor a fost extraordinar. sunet, astfel încât să puteți alege acest model sport.</span>
                 </p>
+                <button onclick="myFunction('dots2','more2','myBtn2')" id="myBtn2">Vezi mai mult</button>
 
               </div>
             </li>
@@ -398,33 +576,32 @@
             <li>
               <div class="get-start-card">
 
-                <div class="card-icon icon-3">
-                  <ion-icon name="person-outline"></ion-icon>
+                <div class="card-icon icon">
+                  <img src="./assets/images/daniel.jpg">
                 </div>
 
-                <h3 class="card-title">Match with seller</h3>
+                <h3 class="card-title">Lamborghini Huracan</h3>
 
                 <p class="card-text">
-                  It to make a type specimen book. It has survived not only five centuries, but also the leap into
-                  electronic
+                  Lamborghini Huracan este o supermașină în stil extravagant, cu performanțe care se potrivesc cu aspectul său. Huracan este rapid și zgomotos, dar modelul<span id="dots3">...</span><span id="more3"> 4WD nu este la fel de bun în colțuri ca modelul 2WD. Stilul izbitor, calitatea construcției frumoasă și o serie de gadget-uri fac Huracanul este o plăcere să te joci.</span>
                 </p>
-
+                <button onclick="myFunction('dots3','more3','myBtn3')" id="myBtn3">Vezi mai mult</button>
               </div>
             </li>
 
             <li>
               <div class="get-start-card">
 
-                <div class="card-icon icon-4">
-                  <ion-icon name="card-outline"></ion-icon>
+                <div class="card-icon icon">
+                  <img src="./assets/images/daniel.jpg">
                 </div>
 
-                <h3 class="card-title">Make a deal</h3>
+                <h3 class="card-title">Ferrari Berlinetta</h3>
 
                 <p class="card-text">
-                  There are many variations of passages of Lorem available, but the majority have suffered alteration
+                  F12 Berlinetta este un coupe cu două locuri cu motor V12, care poartă titlul de cea mai rapidă și mai puternică mașină de drum Ferrari de până acum.Un <span id="dots4">...</span><span id="more4">rezervor de combustibil de 90 de litri înseamnă că nici nu va trebui să te oprești prea des - împinge-l și ar trebui să poți parcurge 370 de mile între umpleri. Din fericire, Ferrari oferă acum o ofertă de service gratuită pe șapte ani, care acoperă toată întreținerea programată a mașinii, indiferent de kilometraj.</span>
                 </p>
-
+                <button onclick="myFunction('dots4','more4','myBtn4')" id="myBtn4">Vezi mai mult</button>
               </div>
             </li>
 
@@ -438,38 +615,28 @@
 
       <div class="footer-top">
 
-        <div class="footer-list>
+        <div class="footer-list">
           <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" alt="Ridex logo">
+            <img src="./assets/images/logo.svg" alt="RENTCAR">
           </a>
-
-          <p class="footer-text">
-            Search for cheap rental cars in New York. With a diverse fleet of 19,000 vehicles, Waydex offers its
-            consumers an
-            attractive and fun selection.
-          </p>
         </div>
 
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">Company</p>
+            <p class="footer-list-title">Companie</p>
           </li>
 
           <li>
-            <a href="#" class="footer-link">About us</a>
+            <a href="#" class="footer-link">Despre noi</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Pricing plans</a>
+            <a href="#" class="footer-link">Blogul nostru</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Our blog</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Contacts</a>
+            <a href="#" class="footer-link">Contacte</a>
           </li>
 
         </ul>
@@ -477,23 +644,23 @@
         <ul class="footer-list">
 
           <li>
-            <p class="footer-list-title">Support</p>
+            <p class="footer-list-title">A sustine</p>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Help center</a>
+            <a href="#" class="footer-link">Centrul de ajutor</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Ask a question</a>
+            <a href="#" class="footer-link">Pune o intrebare</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Privacy policy</a>
+            <a href="#" class="footer-link">Politica de confidențialitate</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Terms & conditions</a>
+            <a href="#" class="footer-link">Termeni si conditii</a>
           </li>
 
         </ul>
@@ -518,24 +685,6 @@
 
           <li>
             <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-skype"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
               <ion-icon name="mail-outline"></ion-icon>
             </a>
           </li>
@@ -543,7 +692,7 @@
         </ul>
 
         <p class="copyright">
-          &copy; 2022 <a href="#">codewithsadee</a>. All Rights Reserved
+          &copy; 2023. All Rights Reserved
         </p>
 
       </div>
@@ -552,16 +701,6 @@
 
 
 
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
