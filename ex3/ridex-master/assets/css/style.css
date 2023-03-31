@@ -576,7 +576,9 @@ body {
   row-gap: 50px;
 }
 
-.footer-top .logo { margin-bottom: 20px; }
+.footer-top .logo { 
+  margin-bottom: 20px;
+} 
 
 .footer-text {
   font-size: var(--fs-6);
@@ -647,3 +649,5 @@ body {
 #more,#more2,#more3,#more4 {display: none;}
 #myBtn:is(:hover, :focus) { color: var(--carolina-blue); }
 #dots,#dots2,#dots3,#dots4 {display: inline;}
+
+
