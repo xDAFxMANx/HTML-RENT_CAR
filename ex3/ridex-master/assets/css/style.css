@@ -289,7 +289,7 @@ body {
 \*-----------------------------------*/
 
 .hero { 
-  padding-top: 120px;
+  padding-top: 180px;
   position: relative;
   min-height: 100vh;
   display:flexbox;
@@ -537,8 +537,7 @@ body {
   box-shadow: var(--shadow-1);
 }
 
-.get-start-card .card-icon {
-  background-image: url('../images/mark.jpg') no-repeat auto;
+.get-start-card .card-icon img{
   height: 50px;
   width: 50px;
   display: grid;
@@ -650,5 +649,7 @@ body {
 #more,#more2,#more3,#more4 {display: none;}
 #myBtn:is(:hover, :focus) { color: var(--carolina-blue); }
 #dots,#dots2,#dots3,#dots4 {display: inline;}
+
+
 
 
